@@ -1,2 +1,4 @@
-# ParallelAndDistributedProgramming
-UBB Parallel and Distributed Programming Course
+# Parallel and Distributed Programming
+
+:bookmark: course: 
+http://www.cs.ubbcluj.ro/~rlupsa/edu/pdp/
