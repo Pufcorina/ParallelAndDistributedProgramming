@@ -2,7 +2,11 @@
 <img src="https://social.microsoft.com/Forums/getfile/754597" align="right"
      title="Size Limit logo by Anton Lovchikov" width="300" height="150">
 
-     MPI is a communication protocol for programming parallel computers. Both point-to-point and collective communication are supported. MPI "is a message-passing application programmer interface, together with protocol and semantic specifications for how its features must behave in any implementation.
+     MPI is a communication protocol for programming parallel computers. 
+     Both point-to-point and collective communication are supported. 
+     MPI "is a message-passing application programmer interface, together 
+     with protocol and semantic specifications for how its features must 
+     behave in any implementation.
 
 ## Instalation ##
 
@@ -48,7 +52,9 @@ I have installed the following versions for MS-MPI:
     The goal of this lab is to implement a distributed algorithm using MPI.
 
 ## Requirement
-    Perform the multiplication of 2 polynomials, by distributing computation across several nodes using MPI. Use both the regular O(n2) algorithm and the Karatsuba algorithm. Compare the performance with the "regular" CPU implementation from lab 5.
+    Perform the multiplication of 2 polynomials, by distributing computation across several nodes using MPI. Use 
+    both the regular O(n2) algorithm and the Karatsuba algorithm. Compare the performance with the "regular" CPU 
+    implementation from lab 5.
 
 ## Computer Specification
 
@@ -75,10 +81,15 @@ I have installed the following versions for MS-MPI:
 
 ## Performed tests
 
-    note:  by level ’x’ i am referring that the algorithms were used to multiply 2 polynomials of rank x * 100, with coefficients being random numbers of x *10 digits.
+    note:  by level ’x’ i am referring that the algorithms were used to multiply 2 polynomials of rank x * 100, with 
+    coefficients being random numbers of x *10 digits.
 
 
-    Thought all the tests I’ve put those algorithms to, the results were for the most  part  as  expected,  although  the  results  may  vary  quite  a  bit  (  see  that up to level 8 the parallelized version of the regular algorithm has the lead, but suddenly  at  level  20  it  takes  quite  a  bit  more  time  than  the  sequential  one).There are a lot of factors that can be responsible for those inconsistencies, like background processes, memory usage, and the implementation itself.
+    Thought all the tests I’ve put those algorithms to, the results were for the most  part  as  expected, although  
+    the  results  may  vary  quite  a  bit  (  see  that up to level 8 the parallelized version of the regular 
+    algorithm has the lead, but suddenly  at  level  20  it  takes  quite  a  bit  more time  than  the  sequential  
+    one).There are a lot of factors that can be responsible for those inconsistencies, like background processes, 
+    memory usage, and the implementation itself.
 
 ## Conclusion
 
