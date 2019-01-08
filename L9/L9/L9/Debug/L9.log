@@ -1,9 +1,0 @@
-﻿  KaratsubaPolynomial.cpp
-  Polynomial.cpp
-d:\facultate\parallelanddistributedprogramming\l9\l9\l9\polynomial.cpp(13): warning C4018: '<': signed/unsigned mismatch
-d:\facultate\parallelanddistributedprogramming\l9\l9\l9\polynomial.cpp(44): warning C4018: '<': signed/unsigned mismatch
-d:\facultate\parallelanddistributedprogramming\l9\l9\l9\polynomial.cpp(50): warning C4018: '<': signed/unsigned mismatch
-  Source.cpp
-d:\facultate\parallelanddistributedprogramming\l9\l9\l9\source.cpp(7): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Generating Code...
-  L9.vcxproj -> D:\Facultate\ParallelAndDistributedProgramming\L9\L9\Debug\L9.exe
