@@ -81,8 +81,17 @@ I have installed the following versions for MS-MPI:
 
 ## Performed tests
 
-    note:  by level ’x’ i am referring that the algorithms were used to multiply 2 polynomials of rank x * 100, with 
-    coefficients being random numbers of x *10 digits.
+    note: by level 'x' i am referring that the algorithms were used to multiply 2 polynomials of rank x and x - 2, 
+    with coefficients being random numbers between -10 and 10. And the number of processes is 6.
+
+| Tables                           | Level 5 | Level 8 | Level 15 | Level 20 |
+| -------------------------------- |:--------:|:-------:|:---------:|:---------:|
+| regular sequential         | 4 ms |  3 ms | 4 ms | 3 ms |
+| regular parallelized | 6 ms | 5 ms |5 ms |6 ms |
+| karatsuba sequential   | 0 ms |1 ms |0 ms |1 ms |
+| karatsuba parallelized   | 0 ms |0 ms |1 ms |0 ms |
+| MPI karatsuba   | 11 ms |11 ms |14 ms |13 ms |
+| MPI regular   | 21 ms |22 ms |22 ms |20 ms |
 
 
     Thought all the tests I’ve put those algorithms to, the results were for the most  part  as  expected, although  
