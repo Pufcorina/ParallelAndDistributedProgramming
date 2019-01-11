@@ -1,5 +1,7 @@
 # Gaussian Blur and Grayscale image filtering
 
+Team members: @Pufcorina and @ChisIulia
+
 ## Goal
 
   Applying a simple filter on an image (e.g., a convolution/linear filter). In our case we choose 2 types of filters: Gaussian Blur and Grayscale.
@@ -34,7 +36,7 @@
 
   One approach would be to use the average method which is the most simple one. We just have to take the average of three colours. Since it's an RGB image, so it means that we have to add r and g and b then divide it by 3 to get the desired grayscale image.
 
-                  Grayscale = \frac{R + G + B}{3}
+                  Grayscale = (R + G + B) / 3
 
   According to this equation, Red has contributed 30\%, Green has contributed 59\% which is greater in all three colours and Blue has contributed 11\%. The average method works but the results were not as expected. We wanted to convert the image into a grayscale, but this turned out to be a rather black image.
 
@@ -69,12 +71,23 @@ According to this equation, Red has contribute 29.9\%, Green has contributed 58.
 
 ## Performance Tests
 
+| Algorithm                        | 1280x733 | 2048x1174 | 640x336 |
+| -------------------------------- |:--------:|:-------:|:---------:|
+| Threads         | 128 ms |  416 ms | 64 ms |
+| Distributed MPI | ? ms | ? ms | ? ms |
+| OpenCL / CUDA   | ? ms | ? ms | ? ms |
+
 
 ## Results
 
 Grayscale             |  Gaussian Blur
 :-------------------------:|:-------------------------:
-![](https://...Ocean.png)  |  ![](https://...Dark.png)
+1280x733 | 1280x733
+![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/gray_img1280x733.jpg)  |  ![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/blur_img1280x733.jpg)
+2048x1174 | 2048x1174
+![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/gray_img2048x1174.jpg)  |  ![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/blur_img2048x1174.jpg)
+640x336 | 640x336
+![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/gray_img640x336.jpg)  |  ![](https://github.com/Pufcorina/ParallelAndDistributedProgramming/blob/master/project/results/blur_img640x336.jpg)
 
 
 ## Conclusion
