@@ -42,15 +42,18 @@ Team members: @Pufcorina and @ChisIulia
 
 #### Problem
 
-This problem arises due to the fact, that we take the average of the three colours. Since the three different colours have three different wavelengths and have their own contribution to the formation of the image, so we have to take average according to their contribution, not done it averagely using the average method. Right now what we are doing is this, 33\% of Red, 33\% of Green and 33\% of Blue.
-\tab We are taking 33\% of each, that means, each of the portions has the same contribution in the image. But in reality, that's not the case. The solution to this has been given by luminosity method.
+  This problem arises due to the fact, that we take the average of the three colours. Since the three different colours have three different wavelengths and have their own contribution to the formation of the image, so we have to take average according to their contribution, not done it averagely using the average method. Right now what we are doing is this, 33\% of Red, 33\% of Green and 33\% of Blue.
+  
+  We are taking 33\% of each, that means, each of the portions has the same contribution in the image. But in reality, that's not the case. The solution to this has been given by luminosity method.
 
-Another approach is the weighted method or luminosity method. Now that we have seen the problem that occurs in the average method we offer a solution to that one. Since red colour has more wavelength of all the three colours, and green is the colour that has not only less wavelength than red colour but also green is the colour that gives more soothing effects to the eyes.\newline
-It means that we have to decrease the contribution of red colour, and increase the contribution of the green colour, and put the blue colour contribution in between these two.
+  Another approach is the weighted method or luminosity method. Now that we have seen the problem that occurs in the average method we offer a solution to that one. Since red colour has more wavelength of all the three colours, and green is the colour that has not only less wavelength than red colour but also green is the colour that gives more soothing effects to the eyes.
+  
+  It means that we have to decrease the contribution of red colour, and increase the contribution of the green colour, and put the blue colour contribution in between these two.
 Son the new equation that form is:
+
     Grayscale = 0.299 * R + 0.587 * G + 0.114 * B
 
-According to this equation, Red has contribute 29.9\%, Green has contributed 58.7\% which is greater in all three colours and Blue has contributed 11.4\%.
+  According to this equation, Red has contribute 29.9\%, Green has contributed 58.7\% which is greater in all three colours and Blue has contributed 11.4\%.
 
 
 ## Short Description of the Implementation:
