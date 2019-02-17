@@ -7,7 +7,25 @@ using namespace std;
 
 #define EUCMOD(a, b)  (a < 0 ? ((a + b) % b) : (a % b))
 
+
+vector< pair<int, int> > splitWorkload(int n, int t) {
+	vector< pair<int, int> > intervals;
+
+	int index = 0;
+	int step = n / t;
+	int mod = n % t;
+
+	while (index < n) {
+		intervals.push_back(pair<int, int>(index, index + step + (mod > 0)));
+		index += step + (mod > 0);
+		mod--;
+	}
+
+	return intervals;
+}
+
 void convolution(vector<int> a, vector<int> b, vector<int>& r, int T) {
+
 	if (T == 1)
 	{
 		for (int i = 0; i < a.size(); i++)
@@ -15,16 +33,17 @@ void convolution(vector<int> a, vector<int> b, vector<int>& r, int T) {
 				r[i] += a[j] * b[EUCMOD((i - j), a.size())];
 	}
 	else {
-		thread t([&]() {
-			for (int i = 0; i < a.size(); i += 2)
+		vector<thread> threads(T);
+		vector<pair<int, int>> intervals = splitWorkload(a.size(), T);
+		for (int k = 0; k < T; k++)
+			threads[k] = thread([&, k]() {
+			for (int i = intervals[k].first; i < intervals[k].second; i++)
 				for (int j = 0; j < a.size(); j++)
 					r[i] += a[j] * b[EUCMOD((i - j), a.size())];
-		});
+			});
 
-		for (int i = 1; i < a.size(); i += 2)
-			for (int j = 0; j < a.size(); j++)
-				r[i] += a[j] * b[EUCMOD((i - j), a.size())];
-		t.join();
+		for (int i = 0; i < T; i++)
+			threads[i].join();
 	}
 	
 }
