@@ -5,15 +5,33 @@
 
 using namespace std;
 
+vector< pair<int, int> > splitWorkload(int n, int t) {
+	vector< pair<int, int> > intervals;
+
+	int index = 0;
+	int step = n / t;
+	int mod = n % t;
+
+	while (index < n) {
+		intervals.push_back(pair<int, int>(index, index + step + (mod > 0)));
+		index += step + (mod > 0);
+		mod--;
+	}
+
+	return intervals;
+}
+
 inline vector <int> solve(vector <int> a, vector <int> b, int T) {
 	vector <int> res;
 	int n = a.size();
 	int m = 2 * n - 1;
 	res.resize(m, 0);
+
+	vector< pair<int, int> > intervals = splitWorkload(2 * n - 1, T);
 	vector <thread> thr;
 	for (int idx = 0; idx < T; ++idx) {
 		thr.push_back(thread([&, idx]() {
-			for (int x = idx; x < m; x += T) {
+			for (int x = intervals[idx].first; x < intervals[idx].second; x++) {
 				for (int i = 0; i < n; ++i) {
 					if (x - i >= n || x - i < 0) {
 						continue;
@@ -48,7 +66,7 @@ inline vector <int> solve(vector <int> a, vector <int> b, int T) {
 
 int main() {
 
-	for (auto it : solve({ 1, 2, 3, 4 }, { 1, 2, 3, 4 }, 3))
+	for (auto it : solve({ 1, 2, 3, 4 }, { 1, 2, 3, 4}, 3))
 		cout << it << " ";
 	cout << "\n";
 }
