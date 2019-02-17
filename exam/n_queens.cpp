@@ -20,7 +20,7 @@ bool isSolution(vector<int> v) {
 				check(v, col - k, row + k) ||  // down-left
 				check(v, col + k, row + k) ||  // down-right
 				check(v, col + k, row) ||      // right
-				check(v, col + k, row + k))    // up-right
+				check(v, col + k, row - k))    // up-right
 			{
 				return false; 
 			}
